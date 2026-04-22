@@ -1,8 +1,8 @@
-package games.negative.moss.paper;
+package gg.moonrise.moss.paper;
 
-import games.negative.moss.spring.Disableable;
-import games.negative.moss.spring.Enableable;
-import games.negative.moss.spring.Loadable;
+import gg.moonrise.moss.spring.Disableable;
+import gg.moonrise.moss.spring.Enableable;
+import gg.moonrise.moss.spring.Loadable;
 import lombok.extern.slf4j.Slf4j;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;

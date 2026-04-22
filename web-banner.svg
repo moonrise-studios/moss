@@ -1,0 +1,33 @@
+<svg width="1600" height="720" viewBox="0 0 1600 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="1480" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071218"/>
+      <stop offset="0.58" stop-color="#0C2424"/>
+      <stop offset="1" stop-color="#123635"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#8AF7CB"/>
+      <stop offset="1" stop-color="#3AD7C4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="720" rx="36" fill="url(#bg)"/>
+  <circle cx="1310" cy="132" r="220" fill="#63EBCF" fill-opacity="0.08"/>
+  <circle cx="1450" cy="612" r="280" fill="#8AF7CB" fill-opacity="0.06"/>
+
+  <rect x="76" y="76" width="1448" height="568" rx="28" fill="#09161C" fill-opacity="0.42" stroke="#8AF7CB" stroke-opacity="0.14"/>
+
+  <text x="120" y="312" fill="white" font-size="118" font-weight="700" font-family="Arial, Helvetica, sans-serif">MOSS</text>
+  <text x="122" y="372" fill="#CFFAF1" font-size="28" font-family="Arial, Helvetica, sans-serif" letter-spacing="1">Plugin DI</text>
+
+  <line x1="1082" y1="214" x2="1298" y2="154" stroke="url(#accent)" stroke-width="5"/>
+  <line x1="1082" y1="214" x2="1282" y2="314" stroke="url(#accent)" stroke-width="5"/>
+  <line x1="1082" y1="214" x2="1188" y2="446" stroke="url(#accent)" stroke-width="5"/>
+  <line x1="1188" y1="446" x2="1362" y2="530" stroke="url(#accent)" stroke-width="5"/>
+
+  <circle cx="1082" cy="214" r="28" fill="#0C2724" stroke="#8AF7CB" stroke-width="7"/>
+  <circle cx="1298" cy="154" r="22" fill="#0C2724" stroke="#8AF7CB" stroke-width="5"/>
+  <circle cx="1282" cy="314" r="24" fill="#0C2724" stroke="#52DFCA" stroke-width="5"/>
+  <circle cx="1188" cy="446" r="22" fill="#0C2724" stroke="#52DFCA" stroke-width="5"/>
+  <circle cx="1362" cy="530" r="30" fill="#0C2724" stroke="#8AF7CB" stroke-width="7"/>
+</svg>

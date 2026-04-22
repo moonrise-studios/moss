@@ -5,7 +5,7 @@ import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
 import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.proxy.ProxyServer;
-import games.negative.moss.velocity.MossVelocity;
+import gg.moonrise.moss.velocity.MossVelocity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

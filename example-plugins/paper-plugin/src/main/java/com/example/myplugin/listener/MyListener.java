@@ -1,7 +1,7 @@
 package com.example.myplugin.listener;
 
 import com.example.myplugin.MyPlugin;
-import games.negative.moss.spring.SpringComponent;
+import gg.moonrise.moss.spring.SpringComponent;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

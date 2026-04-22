@@ -1,4 +1,4 @@
-package games.negative.moss.spring;
+package gg.moonrise.moss.spring;
 
 import org.springframework.stereotype.Component;
 

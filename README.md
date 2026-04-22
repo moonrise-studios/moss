@@ -4,6 +4,9 @@
 > **Spring-powered dependency injection and lifecycle management for Minecraft plugins**  
 > PaperMC · BungeeCord · Velocity
 
+Source repo: https://github.com/moonrise-studios/moss  
+Organization: https://github.com/moonrise-studios
+
 `moss` is a tiny library that embeds a Spring `ApplicationContext` inside your Minecraft plugin and wires everything together for you.
 
 Instead of:
@@ -24,9 +27,9 @@ This repository contains:
 ---
 
 ## Example Use-Cases:
-* [Bungeecord Example](https://github.com/negative-games/moss/tree/main/example-plugins/bungeecord-plugin)
-* [PaperMC Example](https://github.com/negative-games/moss/tree/main/example-plugins/paper-plugin)
-* [Velocity Example](https://github.com/negative-games/moss/tree/main/example-plugins/velocity-plugin)
+* [Bungeecord Example](./example-plugins/bungeecord-plugin)
+* [PaperMC Example](./example-plugins/paper-plugin)
+* [Velocity Example](./example-plugins/velocity-plugin)
 
 ## Table of Contents
 1. [Requirements](#requirements)
@@ -61,7 +64,7 @@ This repository contains:
 1. Add `moss-<platform>` and `spring-context` as **implementation** dependencies.
 2. Use **Shadow** (or equivalent) to **shade + relocate** Moss and Spring into your plugin.
 
-> Replace `<version>` with the current release (e.g. `1.0.0` or whatever is published in Negative Games Repo / your repo).
+> Replace `<version>` with current release (e.g. `1.2.2`) published in Moonrise Studios Maven repo / your repo.
 
 ### Gradle (Groovy)
 
@@ -78,8 +81,8 @@ repositories {
     mavenCentral()
     
     maven {
-        name = "negative-games-repo"
-        url = "https://repo.negative.games/repository/maven-releases/"
+        name = "moonrise-repo"
+        url = "https://repo.moonrise.gg/repository/maven-releases/"
     }
 }
 
@@ -91,7 +94,7 @@ dependencies {
     implementation "org.springframework:spring-context:6.2.13"
 
     // Moss (Paper platform)
-    implementation "games.negative.moss:moss-paper:<version>"
+    implementation "gg.moonrise.moss:moss-paper:<version>"
 }
 
 java {
@@ -112,7 +115,7 @@ shadowJar {
     archiveVersion.set("")
 
     // Very important: relocate Moss (and optionally Spring)
-    relocate "games.negative.moss", "${project.group}.libs.moss"
+    relocate "gg.moonrise.moss", "${project.group}.libs.moss"
     // relocate "org.springframework", "${project.group}.libs.spring"
 }
 ```
@@ -130,14 +133,14 @@ version = "1.0.0"
 
 repositories {
     mavenCentral()
-    maven("https://repo.negative.games/repository/maven-releases/")
+    maven("https://repo.moonrise.gg/repository/maven-releases/")
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
 
     implementation("org.springframework:spring-context:6.2.13")
-    implementation("games.negative.moss:moss-paper:<version>")
+    implementation("gg.moonrise.moss:moss-paper:<version>")
 }
 
 java {
@@ -157,7 +160,7 @@ tasks.shadowJar {
     archiveClassifier.set("")
     archiveVersion.set("")
 
-    relocate("games.negative.moss", "${project.group}.libs.moss")
+    relocate("gg.moonrise.moss", "${project.group}.libs.moss")
 }
 ```
 
@@ -166,26 +169,26 @@ tasks.shadowJar {
 Conceptually similar:
 
 * Add `moss-paper`, `moss-bungeecord`, or `moss-velocity` as a dependency.
-* Use the Maven Shade plugin to relocate `games.negative.moss` (and optionally Spring) into your plugin jar.
+* Use the Maven Shade plugin to relocate `gg.moonrise.moss` (and optionally Spring) into your plugin jar.
 
 ```xml
 <repositories>
     <repository>
-        <id>negative-games-repo</id>
-        <url>https://repo.negative.games/repository/maven-releases/</url>
+        <id>moonrise-repo</id>
+        <url>https://repo.moonrise.gg/repository/maven-releases/</url>
     </repository>
 </repositories>
 ```
 
 ```xml
 <dependency>
-    <groupId>games.negative.moss</groupId>
+    <groupId>gg.moonrise.moss</groupId>
     <artifactId>moss-paper</artifactId>
     <version>&lt;version&gt;</version>
 </dependency>
 ```
 
-(Then configure `maven-shade-plugin` with a relocation rule from `games.negative.moss` → `com.example.myplugin.libs.moss`.)
+(Then configure `maven-shade-plugin` with a relocation rule from `gg.moonrise.moss` → `com.example.myplugin.libs.moss`.)
 
 ---
 
@@ -194,7 +197,7 @@ Conceptually similar:
 ### `@SpringComponent`
 
 ```java
-package games.negative.moss.spring;
+package gg.moonrise.moss.spring;
 
 import org.springframework.stereotype.Component;
 
@@ -233,7 +236,7 @@ So make sure your components live under the same package root as your main class
 
 ### Lifecycle Interfaces
 
-All lifecycle interfaces live in `games.negative.moss.spring`:
+All lifecycle interfaces live in `gg.moonrise.moss.spring`:
 
 #### `Loadable`
 

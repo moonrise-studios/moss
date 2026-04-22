@@ -1,6 +1,6 @@
 package com.example.myplugin;
 
-import games.negative.moss.paper.MossPaper;
+import gg.moonrise.moss.paper.MossPaper;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.slf4j.Logger;

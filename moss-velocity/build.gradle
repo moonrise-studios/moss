@@ -5,8 +5,8 @@ plugins {
 }
 
 def id = 'moss-velocity'
-def domain = 'games.negative.moss'
-def apiVersion = '1.2.1'
+def domain = 'gg.moonrise.moss'
+def apiVersion = '1.2.2'
 
 repositories {
     mavenCentral()
@@ -73,7 +73,7 @@ publishing {
             pom {
                 name = "${id}"
                 description = project.description
-                url = 'https://github.com/negative-games/moss'
+                url = 'https://github.com/moonrise-studios/moss'
 
                 licenses {
                     license {

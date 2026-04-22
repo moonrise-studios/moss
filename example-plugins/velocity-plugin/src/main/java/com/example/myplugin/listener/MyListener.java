@@ -3,8 +3,8 @@ package com.example.myplugin.listener;
 import com.velocitypowered.api.event.Subscribe;
 import com.velocitypowered.api.event.connection.PostLoginEvent;
 import com.velocitypowered.api.proxy.Player;
-import games.negative.moss.spring.SpringComponent;
-import games.negative.moss.velocity.spring.Listener;
+import gg.moonrise.moss.spring.SpringComponent;
+import gg.moonrise.moss.velocity.spring.Listener;
 
 @SpringComponent
 public class MyListener implements Listener {

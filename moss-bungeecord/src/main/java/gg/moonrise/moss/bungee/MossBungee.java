@@ -1,8 +1,8 @@
-package games.negative.moss.bungee;
+package gg.moonrise.moss.bungee;
 
-import games.negative.moss.spring.Disableable;
-import games.negative.moss.spring.Enableable;
-import games.negative.moss.spring.Loadable;
+import gg.moonrise.moss.spring.Disableable;
+import gg.moonrise.moss.spring.Enableable;
+import gg.moonrise.moss.spring.Loadable;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.scheduler.TaskScheduler;

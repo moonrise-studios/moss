@@ -1,4 +1,4 @@
-package games.negative.moss.spring;
+package gg.moonrise.moss.spring;
 
 public interface Disableable {
 

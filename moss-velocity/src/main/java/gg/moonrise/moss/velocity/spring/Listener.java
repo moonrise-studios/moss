@@ -1,4 +1,4 @@
-package games.negative.moss.velocity.spring;
+package gg.moonrise.moss.velocity.spring;
 
 /**
  * Marker interface for Velocity event listeners.

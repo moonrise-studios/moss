@@ -14,11 +14,6 @@ repositories {
         name = "papermc-repo"
         url = "https://repo.papermc.io/repository/maven-public/"
     }
-
-    maven {
-        name = "negative-games-repo"
-        url = "https://repo.negative.games/repository/maven-snapshots/"
-    }
 }
 
 dependencies {
@@ -28,7 +23,8 @@ dependencies {
     implementation("org.springframework:spring-context:6.2.13")
 
     // Moss (Velocity Platform)
-    implementation("games.negative.moss:moss-velocity:1.0.1-SNAPSHOT")
+    implementation(files(project(":moss").sourceSets.main.output))
+    implementation(files(project(":moss-velocity").sourceSets.main.output))
 }
 
 def targetJavaVersion = 21
@@ -60,6 +56,6 @@ shadowJar {
     archiveClassifier.set("")
     archiveVersion.set("")
 
-    relocate("games.negative.moss", "${group}.libs.moss")
+    relocate("gg.moonrise.moss", "${group}.libs.moss")
     // relocate other dependencies such as Spring
 }

@@ -21,8 +21,8 @@ subprojects {
                 maven {
                     name = "nexus"
 
-                    def snapshotsUrl = findProperty("nexusSnapshotsUrl") ?: "https://repo.negative.games/repository/maven-snapshots"
-                    def releasesUrl  = findProperty("nexusReleasesUrl")  ?: "https://repo.negative.games/repository/maven-releases"
+                    def snapshotsUrl = findProperty("nexusSnapshotsUrl") ?: "https://repo.moonrise.gg/repository/maven-snapshots"
+                    def releasesUrl  = findProperty("nexusReleasesUrl")  ?: "https://repo.moonrise.gg/repository/maven-releases"
 
                     // Controlled via -PisRelease=true|false (or default to snapshots)
                     def isRelease = (findProperty("isRelease") == "true")

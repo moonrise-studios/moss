@@ -1,4 +1,4 @@
-package games.negative.moss.velocity;
+package gg.moonrise.moss.velocity;
 
 import com.velocitypowered.api.event.EventManager;
 import com.velocitypowered.api.event.Subscribe;
@@ -6,10 +6,10 @@ import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
 import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.api.scheduler.ScheduledTask;
-import games.negative.moss.spring.Disableable;
-import games.negative.moss.spring.Enableable;
-import games.negative.moss.spring.Loadable;
-import games.negative.moss.velocity.spring.Listener;
+import gg.moonrise.moss.spring.Disableable;
+import gg.moonrise.moss.spring.Enableable;
+import gg.moonrise.moss.spring.Loadable;
+import gg.moonrise.moss.velocity.spring.Listener;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

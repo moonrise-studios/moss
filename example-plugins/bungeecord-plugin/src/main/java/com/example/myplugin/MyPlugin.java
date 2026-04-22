@@ -1,6 +1,6 @@
 package com.example.myplugin;
 
-import games.negative.moss.bungee.MossBungee;
+import gg.moonrise.moss.bungee.MossBungee;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.PluginManager;
