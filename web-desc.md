@@ -55,6 +55,8 @@ Moss is designed to be shaded into plugin jars, making it practical for real dep
 
 Moss represents Moonrise Studios' investment in internal-grade engineering standards for Minecraft infrastructure: reusable foundations, cleaner code organization, and tooling that scales with project complexity.
 
+Portfolio assets for Moss are included directly in this repository for website publishing workflows.
+
 ## Links
 
 - **Source:** https://github.com/moonrise-studios/moss
