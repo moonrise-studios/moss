@@ -1,16 +1,20 @@
 {
-  "ready": false,
+  "ready": true,
   "productSlug": "moss",
   "productName": "Moss",
-  "version": "",
-  "title": "",
-  "summary": "",
-  "highlights": [],
+  "version": "pilot-smoke-2026-04-27",
+  "title": "Pilot changelog workflow smoke test",
+  "summary": "Added the Moss pilot changelog workflow, agent instructions, and a small documentation note so the tracked changelog publish path can be exercised end to end.",
+  "highlights": [
+    "Added shared AI runtime and agent instruction files so local agents know how to draft tracked Moonrise changelogs for Moss.",
+    "Added tracked changelog config, tracked latest changelog file, and a publish-only GitHub Actions workflow backed by the Moonrise publish helper script.",
+    "Documented that a tiny docs-only change is enough for pilot smoke tests when the changelog clearly explains what was tested."
+  ],
   "source": {
     "repository": "moonrise-studios/moss",
-    "branch": "",
-    "commit": "",
-    "compare": "",
-    "notes": ""
+    "branch": "snapshot",
+    "commit": "bda73a9890b36b2639ef6000d6e8f5fc4bef8dc8",
+    "compare": "https://github.com/moonrise-studios/moss/compare/a6fd9967f36d7b5ee93ee0d294694c8b15d17237...bda73a9890b36b2639ef6000d6e8f5fc4bef8dc8",
+    "notes": "Smoke-test changelog generated locally after landing the Moss pilot files."
   }
 }
