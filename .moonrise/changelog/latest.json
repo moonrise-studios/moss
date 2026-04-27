@@ -2,25 +2,25 @@
   "ready": true,
   "productSlug": "moss",
   "productName": "Moss",
-  "version": "pilot-smoke-2026-04-27",
-  "title": "Pilot changelog list-format smoke test",
-  "summary": "Updated the tracked Moss changelog entry to exercise section-heading list entries and bullet lines inside the flat highlights array.",
+  "version": "discord-parser-smoke-2026-04-27",
+  "title": "Discord changelog parser smoke test",
+  "summary": "Updated the tracked Moss changelog entry to exercise malformed repeated section-label items so the Discord embed can normalize them into proper bullets.",
   "highlights": [
     "Fixed:",
-    "* corrected changelog guidance so grouped sections use heading entries plus bullet entries",
-    "* aligned root runtime files, agent files, and config guidance around the same list-style format",
+    "Fixed: normalized malformed repeated section-label items into bullet points in the Discord embed",
+    "Fixed known section items even when the agent omitted the bullet marker",
     " ",
     "Added:",
-    "* added explicit list-style examples to the README and tracked changelog guidance",
+    "* added a tracked smoke-test payload for parser hardening against malformed section output",
     " ",
     "Removed:",
-    "* removed the older per-item area-label rule from active instructions"
+    "* removed reliance on perfectly bulleted section items for this end-to-end embed test"
   ],
   "source": {
     "repository": "moonrise-studios/moss",
     "branch": "snapshot",
     "commit": "bda73a9890b36b2639ef6000d6e8f5fc4bef8dc8",
     "compare": "https://github.com/moonrise-studios/moss/compare/a6fd9967f36d7b5ee93ee0d294694c8b15d17237...bda73a9890b36b2639ef6000d6e8f5fc4bef8dc8",
-    "notes": "Local smoke-test entry for section-heading changelog highlights. Not committed yet."
+    "notes": "Tracked smoke-test entry for Discord section parser normalization. Not committed yet."
   }
 }
