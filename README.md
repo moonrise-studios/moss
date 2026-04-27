@@ -356,3 +356,54 @@ gradle :example-plugins:velocity-plugin:build
 The shaded JARs will be in `example-plugins/<module>/build/libs`.
 
 ---
+
+## AI runtime files
+
+This repository now carries shared Moonrise runtime files for:
+
+- `AGENTS.md`
+- `CLAUDE.md`
+- `GEMINI.md`
+- `.github/copilot-instructions.md`
+- `.github/agents/*.agent.md`
+- `.claude/agents/*.md`
+- `.gemini/agents/*.md`
+
+## Local changelog workflow
+
+Changelog generation is local and human initiated.
+
+Tracked files:
+
+- `.moonrise/changelog.config.json`
+- `.moonrise/changelog/latest.json`
+
+Publish workflow:
+
+- `.github/workflows/changelog.yml`
+
+Publish helper:
+
+- `.github/scripts/moonrise_changelog.py`
+
+Expected developer flow:
+
+1. make local changes
+2. ask local agent to create changelog
+3. answer:
+   - what should changelog contain
+   - how far back should it look
+   - any context, exclusions, or emphasis
+4. review `.moonrise/changelog/latest.json`
+5. commit changelog with code changes
+6. push watched branch
+7. GitHub Actions publishes committed changelog to Moonrise App
+
+For pilot smoke tests, a tiny documentation change is enough as long as the changelog clearly describes what was tested.
+
+`latest.json` should keep `"ready": false` until changelog is complete and intended for publication.
+
+Required GitHub repository secrets:
+
+- `MOONRISE_API_BASE_URL`
+- `MOONRISE_INTEGRATION_TOKEN`

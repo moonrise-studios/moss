@@ -1,0 +1,8 @@
+{
+  "productSlug": "moss",
+  "productName": "Moss",
+  "outputPath": ".moonrise/changelog/latest.json",
+  "publish": true,
+  "defaultLookbackGuidance": "Ask developer what range to cover before generating.",
+  "promptContext": "Focus on Spring-powered plugin lifecycle, platform bootstraps, dependency injection behavior, example plugins, packaging, contributor workflow, and release-facing changes."
+}
