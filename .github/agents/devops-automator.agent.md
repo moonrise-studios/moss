@@ -79,8 +79,12 @@ Focus on practical repository automation and delivery hygiene, not abstract plat
 - Keep changelog generation local to developer agent. CI must publish tracked changelog file only.
 - When automation touches changelog flow, preserve this split:
   - local agent asks scope/lookback/context
+  - local agent keeps `title` and `summary` concise
+  - local agent organizes details into labeled areas such as `Add`, `Fix`, `Changed`, `Removed`, `Security`, `Docs`, or `Internal`
   - local agent writes `.moonrise/changelog/latest.json`
+  - local agent writes section heading entries like `Fixed:` or `Added:`, then bullet entries like `* fix 1`
   - GitHub Actions validates and publishes committed file
+- Keep each section heading followed by its bullet entries. Optional spacer entries like ` ` are allowed between sections when useful.
 - Do not add GitHub-side changelog drafting.
 
 ## Repo-specific rules

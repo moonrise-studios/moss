@@ -56,6 +56,10 @@ Stack baseline: Java 21, Paper 1.21.8, BungeeCord 1.21, Gradle 9, Spring Context
 - Keep changelog generation local to dev agent. CI must publish tracked changelog file only.
 - Preserve this split:
   - local agent asks scope/lookback/context
+  - local agent keeps `title` and `summary` concise
+  - local agent organizes details into labeled areas such as `Add`, `Fix`, `Changed`, `Removed`, `Security`, `Docs`, or `Internal`
   - local agent writes `.moonrise/changelog/latest.json`
+  - local agent writes section heading entries like `Fixed:` or `Added:`, then bullet entries like `* fix 1`
   - GitHub Actions validates and publishes committed file
+- Keep each section heading followed by its bullet entries. Optional spacer entries like ` ` are allowed between sections when useful.
 - Do not add GitHub-side changelog drafting.

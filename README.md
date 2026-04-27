@@ -403,6 +403,24 @@ For pilot smoke tests, a tiny documentation change is enough as long as the chan
 
 `latest.json` should keep `"ready": false` until changelog is complete and intended for publication.
 
+Changelog format:
+
+- keep normal `title` and `summary`
+- then group changelog details into clear labeled areas such as `Add`, `Fix`, `Changed`, `Removed`, `Security`, `Docs`, or other headings that fit the release
+- Moonrise still publishes flat `highlights[]`, so represent grouped sections as section heading entries plus bullet entries inside the same list
+
+Example highlights:
+
+- `Fixed:`
+- `* corrected Moonrise API base URL guidance for Actions secrets`
+- `* tightened publish workflow setup notes`
+- ` `
+- `Added:`
+- `* added tracked changelog publish workflow for Moss`
+- ` `
+- `Removed:`
+- `* removed obsolete publish helper artifact from git tracking`
+
 Required GitHub repository secrets:
 
 - `MOONRISE_API_BASE_URL`

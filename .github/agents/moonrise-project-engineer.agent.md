@@ -110,6 +110,10 @@ This agent is a repository-aware coding specialist, not a generic framework evan
   3. any context, audience, exclusions, or emphasis
 - Read `.moonrise/changelog.config.json` when present.
 - Inspect local git status, diff, and log with that approved scope.
+- Keep `title` and `summary` concise.
+- After `title` and `summary`, organize changelog details into labeled areas such as `Add`, `Fix`, `Changed`, `Removed`, `Security`, `Docs`, or `Internal` when they fit the work.
+- Moonrise publish payload still uses flat `highlights[]`, so write section heading entries like `Fixed:` or `Added:`, then bullet entries like `* added grouped changelog instructions for future releases`.
+- Keep each section heading followed by its bullet entries. Optional spacer entries like ` ` are allowed between sections when useful.
 - Write `.moonrise/changelog/latest.json`.
 - Set `"ready": true` only when file is complete and intended for publication.
 - Do not publish changelog yourself. GitHub Actions publishes committed file later.

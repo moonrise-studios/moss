@@ -98,6 +98,10 @@ Your job is not generic README polishing. Your job is to keep the repository's t
   3. any context, audience, exclusions, or emphasis
 - Read `.moonrise/changelog.config.json` when present.
 - Use local git history and diff scoped by the developer's answers.
+- Keep `title` and `summary` concise.
+- After `title` and `summary`, organize changelog details into labeled areas such as `Add`, `Fix`, `Changed`, `Removed`, `Security`, `Docs`, or `Internal` when they fit the work.
+- Moonrise publish payload still uses flat `highlights[]`, so write section heading entries like `Fixed:` or `Added:`, then bullet entries like `* added changelog smoke-test note for operators`.
+- Keep each section heading followed by its bullet entries. Optional spacer entries like ` ` are allowed between sections when useful.
 - Write `.moonrise/changelog/latest.json`.
 - Set `"ready": true` only when tracked file is complete and ready for later publication.
 - Do not publish changelog yourself. GitHub Actions publishes committed file later.

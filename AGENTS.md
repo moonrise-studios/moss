@@ -354,6 +354,10 @@ Use this when documenting the real operator workflows instead of leaving command
   3. any context, audience, exclusions, or emphasis
 - If `.moonrise/changelog.config.json` exists, treat it as required context for product slug, tracked output path, and changelog emphasis.
 - Inspect local git status, diff, and log using the developer-approved scope.
+- Keep `title` and `summary` concise.
+- After `title` and `summary`, organize changelog details into clear labeled areas such as `Add`, `Fix`, `Changed`, `Removed`, `Security`, `Docs`, `Internal`, or other explicit headings that fit the work.
+- Moonrise publish payload still uses flat `highlights[]`, so represent grouped sections as ordered list entries, for example `Fixed:`, `* corrected startup ordering`, `* tightened retry handling`, ` `, `Added:`, `* added module bootstrap checks`.
+- Keep each section heading followed by its bullet entries. Optional spacer entries like ` ` are allowed between sections when useful.
 - Write the tracked changelog file at `.moonrise/changelog/latest.json`.
 - Set `"ready": true` only when the tracked changelog file is complete and intended for publication.
 - Do not commit, push, or publish changelog unless the developer explicitly asks.
