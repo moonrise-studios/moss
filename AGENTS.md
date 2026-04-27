@@ -356,8 +356,8 @@ Use this when documenting the real operator workflows instead of leaving command
 - Inspect local git status, diff, and log using the developer-approved scope.
 - Keep `title` and `summary` concise.
 - After `title` and `summary`, organize changelog details into clear labeled areas such as `Add`, `Fix`, `Changed`, `Removed`, `Security`, `Docs`, `Internal`, or other explicit headings that fit the work.
-- Moonrise publish payload still uses flat `highlights[]`, so write section heading entries like `Fixed:` or `Added:`, then bullet entries that repeat the same area keyword, such as `* Fixed: corrected startup ordering` or `* Added: module bootstrap checks`.
-- Keep each section heading followed by bullet entries that repeat the same area keyword, for example `* Fixed: ...`. Optional spacer entries like ` ` are allowed between sections when useful.
+- Moonrise publish payload still uses flat `highlights[]`, so write section heading entries like `Fixed:` or `Added:`, then item entries that repeat the same area keyword, such as `Fixed: corrected startup ordering` or `Added: module bootstrap checks`. Do not add a leading `* ` in changelog creation.
+- Keep each section heading followed by item entries that repeat the same area keyword, for example `Fixed: ...`. Optional spacer entries like ` ` are allowed between sections when useful.
 - Write the tracked changelog file at `.moonrise/changelog/latest.json`.
 - Set `"ready": true` only when the tracked changelog file is complete and intended for publication.
 - Do not commit, push, or publish changelog unless the developer explicitly asks.

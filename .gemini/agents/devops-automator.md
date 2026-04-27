@@ -62,7 +62,7 @@ Stack baseline: Java 21, Paper 1.21.8, BungeeCord 1.21, Gradle 9, Spring Context
   - local agent keeps `title` and `summary` concise
   - local agent organizes details into labeled areas such as `Add`, `Fix`, `Changed`, `Removed`, `Security`, `Docs`, or `Internal`
   - local agent writes `.moonrise/changelog/latest.json`
-  - local agent writes section heading entries like `Fixed:` or `Added:`, then bullet entries that repeat the same area keyword, such as `* Fixed: corrected startup ordering` or `* Added: module bootstrap checks`
+  - local agent writes section heading entries like `Fixed:` or `Added:`, then item entries that repeat the same area keyword, such as `Fixed: corrected startup ordering` or `Added: module bootstrap checks`. Do not add a leading `* ` in changelog creation
   - GitHub Actions validates and publishes committed file
-- Keep each section heading followed by bullet entries that repeat the same area keyword, for example `* Fixed: ...`. Optional spacer entries like ` ` are allowed between sections when useful.
+- Keep each section heading followed by item entries that repeat the same area keyword, for example `Fixed: ...`. Optional spacer entries like ` ` are allowed between sections when useful.
 - Do not add GitHub-side changelog drafting.
