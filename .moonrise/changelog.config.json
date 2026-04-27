@@ -8,7 +8,7 @@
   "sectionGuidance": [
     "Keep title and summary concise.",
     "After summary, organize changelog details into labeled areas such as Add, Fix, Changed, Removed, Security, Docs, Internal, or other clear headings when applicable.",
-    "Moonrise publish payload still uses flat highlights[], so write section heading entries like 'Fixed:' or 'Added:', then bullet entries like '* fix 1' or '* corrected plugin bootstrap ordering'.",
-    "Keep each section heading followed by its bullet entries. Optional spacer entries like ' ' are allowed between sections when useful."
+    "Moonrise publish payload still uses flat highlights[], so write section heading entries like 'Fixed:' or 'Added:', then bullet entries that repeat the same area keyword, such as '* Fixed: corrected startup ordering' or '* Added: module bootstrap checks'.",
+    "Keep each section heading followed by bullet entries that repeat the same area keyword, for example '* Fixed: ...'. Optional spacer entries like ' ' are allowed between sections when useful."
   ]
 }

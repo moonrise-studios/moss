@@ -4,23 +4,23 @@
   "productName": "Moss",
   "version": "discord-parser-smoke-2026-04-27",
   "title": "Discord changelog parser smoke test",
-  "summary": "Updated the tracked Moss changelog entry to exercise malformed repeated section-label items so the Discord embed can normalize them into proper bullets.",
+  "summary": "Updated the tracked Moss changelog entry to exercise section headers plus keyworded bullet items so the Discord embed keeps the area label on each actual item.",
   "highlights": [
     "Fixed:",
-    "Fixed: normalized malformed repeated section-label items into bullet points in the Discord embed",
-    "Fixed known section items even when the agent omitted the bullet marker",
+    "* Fixed: normalized malformed repeated section-label items into bullet points in the Discord embed",
+    "* Fixed: kept the area label on each actual item instead of stripping it during normalization",
     " ",
     "Added:",
-    "* added a tracked smoke-test payload for parser hardening against malformed section output",
+    "* Added: added a tracked smoke-test payload for parser hardening against malformed section output",
     " ",
     "Removed:",
-    "* removed reliance on perfectly bulleted section items for this end-to-end embed test"
+    "* Removed: removed reliance on perfectly bulleted section items for this end-to-end embed test"
   ],
   "source": {
     "repository": "moonrise-studios/moss",
     "branch": "snapshot",
     "commit": "bda73a9890b36b2639ef6000d6e8f5fc4bef8dc8",
     "compare": "https://github.com/moonrise-studios/moss/compare/a6fd9967f36d7b5ee93ee0d294694c8b15d17237...bda73a9890b36b2639ef6000d6e8f5fc4bef8dc8",
-    "notes": "Tracked smoke-test entry for Discord section parser normalization. Not committed yet."
+    "notes": "Tracked smoke-test entry for Discord section-header rendering with keyworded bullet items. Not committed yet."
   }
 }
