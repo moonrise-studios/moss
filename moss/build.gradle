@@ -5,7 +5,7 @@ plugins {
 
 def id = 'moss-common'
 def domain = 'gg.moonrise.moss'
-def apiVersion = '1.2.2'
+def apiVersion = '1.2.3'
 
 repositories {
     mavenCentral()

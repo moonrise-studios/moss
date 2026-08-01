@@ -6,7 +6,7 @@ plugins {
 
 def id = 'moss-velocity'
 def domain = 'gg.moonrise.moss'
-def apiVersion = '1.2.2'
+def apiVersion = '1.2.3'
 
 repositories {
     mavenCentral()
@@ -28,6 +28,13 @@ dependencies {
     // Lombok
     compileOnly("org.projectlombok:lombok:1.18.32")
     annotationProcessor("org.projectlombok:lombok:1.18.32")
+
+    // Testing
+    testImplementation(platform("org.junit:junit-bom:5.12.2"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("com.velocitypowered:velocity-api:3.4.0-SNAPSHOT")
+    testImplementation("org.springframework:spring-context:6.2.13")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 def targetJavaVersion = 21
@@ -50,6 +57,10 @@ tasks.withType(JavaCompile).configureEach {
 
 tasks.jar {
     enabled = false
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 tasks.shadowJar {

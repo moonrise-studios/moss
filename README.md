@@ -64,7 +64,7 @@ This repository contains:
 1. Add `moss-<platform>` and `spring-context` as **implementation** dependencies.
 2. Use **Shadow** (or equivalent) to **shade + relocate** Moss and Spring into your plugin.
 
-> Replace `<version>` with current release (e.g. `1.2.2`) published in Moonrise Studios Maven repo / your repo.
+> Replace `<version>` with current release (e.g. `1.2.3`) published in Moonrise Studios Maven repo / your repo.
 
 ### Gradle (Groovy)
 

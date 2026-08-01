@@ -26,11 +26,11 @@ public abstract class MossVelocity {
 
     public MossVelocity(ProxyServer server) {
         this.server = server;
-        load();
     }
 
     @Subscribe
     public void onProxyInitialization(ProxyInitializeEvent event) {
+        load();
         enable();
     }
 
