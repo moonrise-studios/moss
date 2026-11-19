@@ -1,6 +1,10 @@
+import com.vanniktech.maven.publish.DeploymentValidation
+import com.vanniktech.maven.publish.MavenPublishBaseExtension
+
 plugins {
     id 'java'
     id 'maven-publish'
+    id 'com.vanniktech.maven.publish.base' version '0.36.0' apply false
 }
 
 repositories {
@@ -13,26 +17,43 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.32")
 }
 
-subprojects {
-    // Only configure projects that use maven-publish
-    plugins.withId('maven-publish') {
-        publishing {
-            repositories {
-                maven {
-                    name = "nexus"
+subprojects { subproject ->
+    subproject.pluginManager.withPlugin('maven-publish') {
+        def sourceUrl = 'https://github.com/moonrise-studios/moss'
+        subproject.description = "Moss dependency injection and lifecycle management (${subproject.name})"
+        def publishing = subproject.extensions.getByType(PublishingExtension)
 
-                    def snapshotsUrl = findProperty("nexusSnapshotsUrl") ?: "https://repo.moonrise.gg/repository/maven-snapshots"
-                    def releasesUrl  = findProperty("nexusReleasesUrl")  ?: "https://repo.moonrise.gg/repository/maven-releases"
+        publishing.publications.withType(MavenPublication).configureEach {
+            pom.scm {
+                url = sourceUrl
+                connection = "scm:git:${sourceUrl}.git"
+                developerConnection = 'scm:git:ssh://git@github.com/moonrise-studios/moss.git'
+            }
+        }
 
-                    // Controlled via -PisRelease=true|false (or default to snapshots)
-                    def isRelease = (findProperty("isRelease") == "true")
-                    url = uri(isRelease ? releasesUrl : snapshotsUrl)
+        if (subproject.providers.gradleProperty('centralRelease').isPresent()) {
+            subproject.pluginManager.apply('com.vanniktech.maven.publish.base')
+            def central = subproject.extensions.getByType(MavenPublishBaseExtension)
+            subproject.afterEvaluate {
+                def publication = publishing.publications.named('mavenJava', MavenPublication).get()
+                central.coordinates(publication.groupId, publication.artifactId, publication.version)
+            }
+            central.publishToMavenCentral(true, DeploymentValidation.PUBLISHED)
+            central.signAllPublications()
+        }
 
-                    credentials {
-                        username = findProperty("nexusUsername")
-                        password = findProperty("nexusPassword")
-                    }
-                }
+        publishing.repositories.maven {
+            name = "nexus"
+
+            def snapshotsUrl = subproject.findProperty("nexusSnapshotsUrl") ?: "https://repo.moonrise.gg/repository/maven-snapshots"
+            def releasesUrl = subproject.findProperty("nexusReleasesUrl") ?: "https://repo.moonrise.gg/repository/maven-releases"
+
+            def isRelease = subproject.findProperty("isRelease") == "true"
+            url = subproject.uri(isRelease ? releasesUrl : snapshotsUrl)
+
+            credentials {
+                username = subproject.findProperty("nexusUsername")
+                password = subproject.findProperty("nexusPassword")
             }
         }
     }

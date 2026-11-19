@@ -64,7 +64,7 @@ This repository contains:
 1. Add `moss-<platform>` and `spring-context` as **implementation** dependencies.
 2. Use **Shadow** (or equivalent) to **shade + relocate** Moss and Spring into your plugin.
 
-> Replace `<version>` with current release (e.g. `1.2.3`) published in Moonrise Studios Maven repo / your repo.
+> Releases from `1.2.3` are published to Maven Central under `gg.moonrise.moss`. Use `mavenCentral()` in Gradle. The Moonrise Maven repository also hosts older releases and snapshots.
 
 ### Gradle (Groovy)
 
@@ -354,6 +354,12 @@ gradle :example-plugins:velocity-plugin:build
 ```
 
 The shaded JARs will be in `example-plugins/<module>/build/libs`.
+
+## Publishing to Maven Central
+
+Push the same new release version to all four library modules on the `release` branch. GitHub Actions tests the build and publishes the signed Common, Paper, BungeeCord, and Velocity artifacts. The **Maven Central** workflow can also be run manually against `release`.
+
+GitHub Actions uses `MAVEN_CENTRAL_USERNAME` and `MAVEN_CENTRAL_PASSWORD` from a Sonatype user token with publishing access to `gg.moonrise`. Set `MAVEN_CENTRAL_SIGNING_KEY` to the ASCII-armored private key and `MAVEN_CENTRAL_SIGNING_PASSWORD` to its passphrase. The public key must be available from a keyserver supported by Central.
 
 ---
 

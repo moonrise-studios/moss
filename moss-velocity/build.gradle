@@ -39,6 +39,9 @@ dependencies {
 
 def targetJavaVersion = 21
 java {
+    withSourcesJar()
+    withJavadocJar()
+
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion
     targetCompatibility = javaVersion
@@ -69,12 +72,22 @@ tasks.shadowJar {
     archiveClassifier.set("")
 }
 
+tasks.sourcesJar {
+    from(project(':moss').sourceSets.main.allSource)
+}
+
+tasks.javadoc {
+    source(project(':moss').sourceSets.main.allJava)
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
             artifact(tasks.shadowJar) {
                 builtBy tasks.shadowJar
             }
+            artifact(tasks.sourcesJar)
+            artifact(tasks.javadocJar)
 
             // Explicit coordinates (optional, defaults to project.group/name/version)
             groupId = "${domain}"
